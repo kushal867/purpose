@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <title>❤️ HAPPY PURPOSE DAY ANUUUU ❤️</title>
+    <style>
+      body {
+        background: #0f0f0f;
+        color: #ff758c;
+        font-family: "Georgia", serif;
+        text-align: center;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        border: 1px solid #333;
+        padding: 30px;
+        border-radius: 15px;
+        background: #1a1a1a;
+        box-shadow: 0 0 20px rgba(255, 117, 140, 0.2);
+      }
+      #output {
+        white-space: pre-wrap;
+        font-size: 1.1em;
+        color: #ffccd5;
+        margin-top: 20px;
+        min-height: 100px;
+      }
+      .result-box {
+        font-size: 2em;
+        font-weight: bold;
+        color: #ff4d6d;
+        margin: 20px 0;
+        display: none;
+      }
+      input {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #444;
+        background: #222;
+        color: white;
+        width: 80%;
+        margin: 10px 0;
+      }
+      button {
+        padding: 12px 25px;
+        background: #ff4d6d;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: #ff758c;
+        transform: scale(1.05);
+      }
+      .letter-text {
+        font-style: italic;
+        color: #ffb3c1;
+        border-left: 3px solid #ff4d6d;
+        padding-left: 20px;
+        text-align: left;
+        margin-top: 30px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>✨ ❤️ HAPPY PURPOSE DAY ANUUUU ❤️ ✨</h1>
+      <p>Enter your names to sync your souls.</p>
+
+      <input type="text" id="name1" placeholder="Mero Nam" />
+      <input type="text" id="name2" placeholder="Timro Nam" />
+      <br />
+      <button id="btn" onclick="startAnalysis()">Start Analysis</button>
+
+      <div id="output"></div>
+      <div id="result" class="result-box">99% MATCH</div>
+
+      <div id="letter" class="letter-text"></div>
+    </div>
+
+    <script>
+      async function typeWriter(text, elementId, speed = 40) {
+        const el = document.getElementById(elementId);
+        el.style.display = "block";
+        for (let char of text) {
+          el.innerHTML += char;
+          await new Promise((r) => setTimeout(r, speed));
+        }
+      }
+
+      async function startAnalysis() {
+        const n1 = document.getElementById("name1").value;
+        const n2 = document.getElementById("name2").value;
+        const out = document.getElementById("output");
+        const res = document.getElementById("result");
+        const letDiv = document.getElementById("letter");
+        const btn = document.getElementById("btn");
+
+        if (!n1 || !n2) return alert("Please provide both names.");
+
+        btn.style.display = "none";
+        out.innerHTML = "";
+        res.style.display = "none";
+        letDiv.innerHTML = "";
+        letDiv.style.display = "none";
+
+        await typeWriter(
+          "Initialising heart-beat synchronization...",
+          "output",
+          30,
+        );
+        await typeWriter(
+          "\nScanning cosmic alignment: [❤️❤️❤️❤️❤️❤️❤️❤️] 100%",
+          "output",
+          20,
+        );
+        await new Promise((r) => setTimeout(r, 800));
+
+        out.innerHTML = "Analysis Complete.";
+        res.style.display = "block";
+
+        const letterContent = `
+Dearest ${n2},
+
+They say that the universe is made of atoms, but as ${n1} and you come together, it’s clear the universe is actually made of stories. 
+
+A 99% match isn't just a number—it’s the sound of two hearts beating in the same rhythm. It’s the way your names look side-by-side, like they were always meant to be written in the same sentence. 
+
+Wherever this journey leads, may it be filled with the kind of magic that numbers can't fully explain.
+
+Forever and always,
+The Stars.`;
+
+        await typeWriter(letterContent, "letter", 50);
+      }
+    </script>
+  </body>
+</html>
